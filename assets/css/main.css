@@ -1284,12 +1284,12 @@ section,
 #resumebtn{
   width: 10rem;
   height: 3rem;
-  background-color: #002231;
   border: none;
+  background-color: #51C4DF;
 }
 #resumebtn:hover{
-  background-color: #51C4DF;
-  color: black;
+  background-color: #002231;
+  color: white;
 }
 .card{
   width: 120px;
@@ -1311,4 +1311,18 @@ section,
   /* border: 8px solid #51c4df; */
   box-shadow: 2px 2px 5px 4px #51C4DF;
   margin-top: 1.4rem;
+}
+#buttonCert{
+  background: #149ddd;
+  color: white;
+  border: none;
+}
+#buttonCert:hover{
+  background-color: #040b14;
+}
+.myProjects{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 20rem);
+  gap: 2rem;
 }
