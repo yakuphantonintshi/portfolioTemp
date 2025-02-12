@@ -86,6 +86,10 @@ h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
 }
+h2{
+  color: var(--heading-color);
+  text-shadow: 2px 2px 5px #51C4DF;
+}
 
 /* PHP Email Form Messages
 ------------------------------*/
@@ -160,7 +164,8 @@ h6 {
 .header .profile-img img {
   margin: 15px auto;
   display: block;
-  width: 120px;
+  width: 190px;
+  height: 190px;
   border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
@@ -1274,4 +1279,36 @@ section,
 .skill:hover{
   background: #149ddd;
   font-size: large;
+}
+
+#resumebtn{
+  width: 10rem;
+  height: 3rem;
+  background-color: #002231;
+  border: none;
+}
+#resumebtn:hover{
+  background-color: #51C4DF;
+  color: black;
+}
+.card{
+  width: 120px;
+  height: 170px;
+  background-color: transparent;
+  border: 2px solid #51C4DF;
+  /* margin-block: 1.3rem; */
+}
+
+#myskills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+  grid-template-rows: repeat(3, 190px); /* Creates 3 rows, each 100px high */
+  gap: 2px; /* Optional: Adds space between grid items */
+  margin-inline-start: 5rem;
+}
+.card-img-top{
+  /* object-fit: fill; */
+  /* border: 8px solid #51c4df; */
+  box-shadow: 2px 2px 5px 4px #51C4DF;
+  margin-top: 1.4rem;
 }
