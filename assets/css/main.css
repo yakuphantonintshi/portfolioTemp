@@ -1289,6 +1289,8 @@ section,
 }
 
 #resumebtn{
+  display: flex;
+  align-items: center;
   width: 10rem;
   height: 3rem;
   border: none;
@@ -1296,8 +1298,11 @@ section,
   #f822e0
   ;
 }
+#resumebtn i {
+  padding-inline: 10px;
+} 
 #resumebtn:hover{
-  background-color: #040b14;
+  background-color: #4a095a;
   color: white;
 }
 /* .card{
@@ -1504,27 +1509,77 @@ section,
 #buttonCert:hover{
   background-color: #040b14;
 }
-.myProjects{
+.myProjects {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 20rem);
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 cards per row */
   gap: 2rem;
 }
-.github-link{
-  margin-right: 10rem;
-}
-.portfolio-content img{
+
+.portfolio-content img {
   filter: grayscale(100%);
-  height: 320px;
-  width: 350px;
+  width: 100%; /* Ensure the image fills the container */
+  height: 320px; /* Fixed height for consistency */
 }
-.portfolio-content{
+
+.portfolio-content {
   border: 2px solid #f822e0;
+  position: relative;
+  overflow: hidden; /* Prevent image overflow */
 }
 
-.portfolio-content:hover{
+.portfolio-content:hover img {
+  filter: none;
+}
 
-  img{
-    filter: none;
+/* Responsive for screens up to 980px */
+@media screen and (max-width: 980px) {
+  .myProjects {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium screens */
+  }
+
+  .portfolio-content img {
+    height: 250px; /* Smaller images for medium screens */
   }
 }
+
+/* Responsive for screens up to 768px */
+@media screen and (max-width: 768px) {
+  .myProjects {
+    grid-template-columns: 1fr; /* 1 card per row on smaller screens */
+    gap: 1.5rem; /* Smaller gap between items */
+  }
+
+  .portfolio-content img {
+    height: 220px; /* Smaller images for smaller screens */
+  }
+}
+
+/* Responsive for screens up to 480px */
+@media screen and (max-width: 480px) {
+  .myProjects {
+    grid-template-columns: 1fr; /* 1 card per row on very small screens */
+    gap: 1rem; /* Even smaller gap on mobile */
+  }
+
+  .portfolio-content img {
+    height: 200px; /* Smallest image height for mobile */
+  }
+}
+
+/* Optional Styling for hover effect */
+.portfolio-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: none;
+  text-align: center;
+}
+
+.portfolio-content:hover .portfolio-info {
+  display: block; /* Show info on hover */
+}
+
