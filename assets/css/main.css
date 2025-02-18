@@ -1408,6 +1408,93 @@ section,
   filter: none;
 }
 
+@media screen and (max-width: 980px) {
+  .card {
+      width: 45%; /* Adjust card width to fit better on smaller screens */
+  }
+}
+
+/* Display as Grid on smaller screens */
+@media screen and (max-width: 768px) {
+  .skills-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      justify-items: center;
+      width: 100%;
+  }
+
+  .card {
+      width: auto;
+  }
+
+  .card img {
+      width: 70%;
+      height: 70%;
+  }
+
+  .card-title {
+      font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skills-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      justify-items: center;
+  }
+
+  .card {
+      width: auto;
+  }
+
+  .card img {
+      width: 70%;
+      height: 70%;
+  }
+
+  .card-title {
+      font-size: 0.9rem;
+  }
+}
+
+/* Fade and Slide Animation for Cards */
+@keyframes fadeAndSlide {
+  0% {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  50% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-100%);
+      opacity: 0;
+  }
+}
+
+/* Apply Animation for Cards */
+.card:nth-child(odd) {
+  animation: fadeAndSlide 10s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.card:nth-child(even) {
+  animation: fadeAndSlide 10s ease-in-out infinite;
+  animation-delay: 5s;
+}
+
+/* Disable animation on small screens */
+@media screen and (max-width: 768px) {
+  .card {
+      animation: none;
+      opacity: 1; /* No fading animation, cards stay visible */
+  }
+}
+
 
 #buttonCert{
   background: #f822e0;
