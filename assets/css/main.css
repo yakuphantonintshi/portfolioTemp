@@ -152,8 +152,7 @@ h2{
 --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
-  background-color: 
-  #4a095a;
+  background-image:linear-gradient(rgb(1, 1, 49), rgb(75, 2, 75)) ;
   position: fixed;
   top: 0;
   left: 0;
